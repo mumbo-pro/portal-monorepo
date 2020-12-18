@@ -1,31 +1,33 @@
 {
   "name": "portal",
   "version": "0.0.1",
-  "main": "./bin/www",
-  "private": true,  
+  "main": "./bin/server",
+  "private": true,
   "description": "A case study project to connect with recruiters, HR managers & people in the same industry to find the best job opportunities,",
   "scripts": {
-    "start": "node ./bin/www",
-    "serve": "nodemon ./bin/www",
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "node ./bin/server",
+    "client": "node ./bin/client",
+    "serve": "nodemon ./bin/server",
     "debug": "set DEBUG=myapp:* & npm start",
     "test": "jest"
   },
-  "author": "Alpha Olomi",
+  "author": "Mumbo IO <https://mumbo-pro.github.io/mumbo.io/>",
   "license": "MIT",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "concurrently": "^4.1.2",
     "config": "^3.2.2",
     "cors": "^2.8.5",
+    "debug": "~2.6.9",
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.7.5",
-    "debug": "~2.6.9",
     "morgan": "~1.9.1"
   },
   "devDependencies": {
-    "nodemon": "^1.19.2",
     "jest": "^24.9.0",
+    "nodemon": "^1.19.2",
     "superagent": "5.1.0",
     "supertest": "4.0.2"
   },
