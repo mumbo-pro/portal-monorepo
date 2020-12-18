@@ -1,4 +1,4 @@
-# Portal Engine [![Software License][ico-license]](LICENSE.md) [![Build Status][ico-travis]][link-travis]
+# Portal [![Software License][ico-license]](LICENSE.md) [![Build Status][ico-travis]][link-travis]
 
 A case study project to connect with recruiters, HR managers & people in the same industry to find the best job opportunities,
 
@@ -45,37 +45,36 @@ Via Git, Yarn is preferred but optional.
 
 - Fork repo
 
-```bash
+```sh
 
-git clone https://github.com/mumbo-pro/portal.git
+git clone https://github.com/gsonly/portal-monorepo.git
 
+cd portal-monorepo
 
-cd portal
+yarn install
+
+cd portal-front
 
 yarn install
 ```
 
-- Edit `.env` and set your database connection details
-
-```bash
-cp .env.example .env
-```
-
 - Development
 
-```
-yarn run serve
+on the root dir
+
+```sh
+yarn start
 ```
 
 - Testing
 
-```
+```sh
 yarn run test
 ```
 
 #### Production
 
-```bash
+```sh
 yarn run build
 ```
 
@@ -85,8 +84,8 @@ Please see [CHANGELOG](./docs/CHANGELOG.md) for more information what has change
 
 ## Testing
 
-```bash
-$ yarn tun test
+```sh
+$ yarn run test
 ```
 
 ## Contributing
@@ -110,4 +109,3 @@ The Apache 2 License. Please see [License File](LICENSE) for more information.
 [ico-travis]: https://img.shields.io/travis/com/mumbo-pro/portal?style=flat-square
 [link-travis]: https://travis-ci.com/mumbo-pro/portal
 [link-contributors]: ../../contributors
-

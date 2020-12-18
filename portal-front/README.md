@@ -40,26 +40,18 @@ A frontend baked with React
 
 ## 🚀Getting started
 
-Composer and Yarn/NPM are required
+Yarn/NPM are required
 
 #### Installation
 
 Via Git, Yarn is preferred but optional.
 
-- Fork repo
-
-```bash
-git clone https://github.com/mumbo-pro/portal-front.git
+```sh
+git clone https://github.com/gsonly/portal-monorepo.git
 
 cd portal-front
 
 yarn install
-```
-
-- Edit `.env` and set your database connection details
-
-```bash
-cp .env.example .env
 ```
 
 - Development
