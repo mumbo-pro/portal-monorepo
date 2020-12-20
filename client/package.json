@@ -37,6 +37,7 @@
     "type": "git",
     "url": "git+https://github.com/mumbo-pro/portal-front.git"
   },
+  "proxy": "http://localhost:3001",
   "keywords": [
     "reactjs",
     "job",
