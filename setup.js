@@ -1,6 +1,6 @@
 const shell = require('shelljs');
 
 shell.exec('npm i');
-shell.cd('./portal-front');
+shell.cd('./client');
 shell.exec('npm i');
 shell.cd('..');
