@@ -39,7 +39,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mumbo-pro/portal.git"
+    "url": "git+https://github.com/gsonly/portal-monorepo.git"
   },
   "keywords": [
     "portal",
@@ -47,9 +47,9 @@
     "jobsearch"
   ],
   "bugs": {
-    "url": "https://github.com/mumbo-pro/portal/issues"
+    "url": "https://github.com/gsonly/portal-monorepo/issues"
   },
-  "homepage": "https://github.com/mumbo-pro/portal#readme",
+  "homepage": "https://github.com/gsonly/portal-monorepo#readme",
   "jest": {
     "testEnvironment": "node",
     "coveragePathIgnorePatterns": [

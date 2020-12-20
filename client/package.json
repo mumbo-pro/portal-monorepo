@@ -1,7 +1,6 @@
 {
   "name": "portal-client",
   "version": "0.1.0",
-  "description": "A case study project to connect with recruiters, HR managers & people in the same industry to find the best job opportunities,",
   "private": true,
   "dependencies": {
     "axios": "^0.19.0",
@@ -26,16 +25,17 @@
   "eslintConfig": {
     "extends": "react-app"
   },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ],
-  "proxy": "http://localhost:6005",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/mumbo-pro/portal-front.git"
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   },
   "proxy": "http://localhost:3001",
   "keywords": [
@@ -45,9 +45,5 @@
     "portal",
     "frontend"
   ],
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/mumbo-pro/portal-front/issues"
-  },
-  "homepage": "https://github.com/mumbo-pro/portal-front#readme"
+  "license": "MIT"
 }
