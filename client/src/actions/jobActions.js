@@ -3,12 +3,10 @@ import { ADD_JOB, DELETE_JOB, GET_JOBS, JOBS_LOADING } from './types';
 import { tokenConfig } from './authActions';
 import { returnErrors } from './errorActions';
 
-const BASE_URL = process.env.APP_URL || 'http://localhost:6005';
-
 export const getJobs = () => dispatch => {
   dispatch(setJobsLoading());
   axios
-    .get(BASE_URL + '/api/jobs')
+    .get('/api/jobs')
     .then(res =>
       dispatch({
         type: GET_JOBS,
@@ -20,7 +18,7 @@ export const getJobs = () => dispatch => {
 
 export const addJob = item => (dispatch, getState) => {
   axios
-    .post(BASE_URL + '/api/jobs', item, tokenConfig(getState))
+    .post('/api/jobs', item, tokenConfig(getState))
     .then(res =>
       dispatch({
         type: ADD_JOB,
@@ -32,7 +30,7 @@ export const addJob = item => (dispatch, getState) => {
 
 export const deleteItem = id => (dispatch, getState) => {
   axios
-    .delete(`${BASE_URL}/api/jobs/${id}`, tokenConfig(getState))
+    .delete(`/api/jobs/${id}`, tokenConfig(getState))
     .then(res =>
       dispatch({
         type: DELETE_JOB,
