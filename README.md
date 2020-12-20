@@ -19,17 +19,5 @@ git clone https://github.com/gsonly/portal-monorepo.git
 
 cd portal-monorepo
 
-yarn install
-
-cd portal-front
-
-yarn install
-```
-
-### Development
-
-on the root dir
-
-```sh
-yarn start
+npm start
 ```
