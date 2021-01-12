@@ -1,59 +1,44 @@
 {
-  "name": "portal",
-  "version": "0.0.1",
-  "main": "./bin/server",
-  "private": true,
-  "description": "A case study project to connect with recruiters, HR managers & people in the same industry to find the best job opportunities,",
-  "scripts": {
-    "prestart": "node setup.js",
-    "start": "concurrently \"npm run server\" \"npm run client\"",
-    "server": "node ./bin/server",
-    "client": "node ./bin/client",
-    "serve": "nodemon ./bin/server",
-    "debug": "set DEBUG=myapp:* & npm start",
-    "test": "jest"
-  },
-  "author": "Mumbo IO <https://mumbo-pro.github.io/mumbo.io/>",
+  "name": "mumbocodes",
+  "version": "0.0.0",
   "license": "MIT",
-  "dependencies": {
-    "bcryptjs": "^2.4.3",
-    "concurrently": "^4.1.2",
-    "config": "^3.2.2",
-    "cors": "^2.8.5",
-    "debug": "~2.6.9",
-    "express": "^4.17.1",
-    "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.7.5",
-    "morgan": "~1.9.1"
+  "scripts": {
+    "nx": "nx",
+    "start": "nx serve",
+    "build": "nx build",
+    "test": "nx test",
+    "lint": "nx workspace-lint && nx lint",
+    "e2e": "nx e2e",
+    "affected:apps": "nx affected:apps",
+    "affected:libs": "nx affected:libs",
+    "affected:build": "nx affected:build",
+    "affected:e2e": "nx affected:e2e",
+    "affected:test": "nx affected:test",
+    "affected:lint": "nx affected:lint",
+    "affected:dep-graph": "nx affected:dep-graph",
+    "affected": "nx affected",
+    "format": "nx format:write",
+    "format:write": "nx format:write",
+    "format:check": "nx format:check",
+    "update": "nx migrate latest",
+    "workspace-generator": "nx workspace-generator",
+    "dep-graph": "nx dep-graph",
+    "help": "nx help"
   },
+  "private": true,
+  "dependencies": {},
   "devDependencies": {
-    "jest": "^24.9.0",
-    "nodemon": "^1.19.2",
-    "shelljs": "^0.8.4",
-    "superagent": "5.1.0",
-    "supertest": "4.0.2"
-  },
-  "directories": {
-    "doc": "docs",
-    "test": "tests"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/gsonly/portal-monorepo.git"
-  },
-  "keywords": [
-    "portal",
-    "job",
-    "jobsearch"
-  ],
-  "bugs": {
-    "url": "https://github.com/gsonly/portal-monorepo/issues"
-  },
-  "homepage": "https://github.com/gsonly/portal-monorepo#readme",
-  "jest": {
-    "testEnvironment": "node",
-    "coveragePathIgnorePatterns": [
-      "/node_modules/"
-    ]
+    "@nrwl/cli": "11.1.1",
+    "@nrwl/express": "^11.1.2",
+    "@nrwl/react": "11.1.1",
+    "@nrwl/tao": "11.1.1",
+    "@nrwl/workspace": "11.1.1",
+    "@types/node": "12.12.38",
+    "dotenv": "6.2.0",
+    "eslint": "7.10.0",
+    "prettier": "2.1.2",
+    "ts-node": "~9.1.1",
+    "tslint": "~6.1.0",
+    "typescript": "~4.0.3"
   }
 }
