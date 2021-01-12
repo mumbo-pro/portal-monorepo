@@ -22,5 +22,13 @@
       }
     }
   },
-  "projects": {}
+  "projects": {
+    "portal": {
+      "tags": []
+    },
+    "portal-e2e": {
+      "tags": [],
+      "implicitDependencies": ["portal"]
+    }
+  }
 }
