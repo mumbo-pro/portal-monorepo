@@ -8,6 +8,12 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { AppState } from '../store/interface';
 import { useAppStore } from '../store/index';
 
+import { useQuery } from 'react-query';
+
+const fetchJobs = async () => {
+  const response = await fetch('https://jsonplaceholder.typicode.com/posts');
+  return response.json();
+};
 
 function JobListing(props) {
   // static propTypes = {
@@ -16,12 +22,14 @@ function JobListing(props) {
   //   isAuthenticated: PropTypes.bool
   // };
 
-  const { jobs,setJobs } = useAppStore((state: AppState) => state);
-  const getItems = () =>{
+  const { user, jobs, setJobs } = useAppStore((state: AppState) => state);
+  const { status, data, isFetching, error } = useQuery('posts', fetchJobs);
 
-    // axios
-    
-  }
+  // const getItems = () =>{
+
+  // axios
+
+  // }
 
   useEffect(() => {
     // this.props.getItems();
@@ -33,21 +41,19 @@ function JobListing(props) {
     console.log(id);
   };
 
-  const { items } = props.item;
-
   return (
     <Container>
       <ListGroup>
         <TransitionGroup className="shopping-list">
-          {items.map(({ _id, name }) => (
+          {data.map(({ _id, name }) => (
             <CSSTransition key={_id} timeout={500} classNames="fade">
               <ListGroupItem>
-                {this.props.isAuthenticated ? (
+                {user ? (
                   <Button
                     className="remove-btn"
                     color="danger"
                     size="sm"
-                    onClick={this.onDeleteClick.bind(this, _id)}
+                    onClick={onDeleteClick(_id)}
                   >
                     &times;
                   </Button>

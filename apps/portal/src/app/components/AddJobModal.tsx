@@ -9,11 +9,14 @@ import {
   ModalBody,
   ModalHeader,
 } from 'reactstrap';
+
 // import { connect } from 'react-redux';
 // import { addJob } from '../actions/jobActions';
 // import PropTypes from 'prop-types';
 import { AppState } from '../store/interface';
 import { useAppStore } from '../store/index';
+
+
 
 function AddJobModal() {
   // state = {
@@ -30,6 +33,8 @@ function AddJobModal() {
   // static propTypes = {
   //   isAuthenticated: PropTypes.bool
   // };
+
+
 
   const toggle = () => {
     setIsModalOpen(!isModalOpen);
