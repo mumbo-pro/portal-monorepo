@@ -1,30 +1,26 @@
 import React from 'react';
+// import styles from './app.module.css';
+import { Route } from 'react-router-dom';
+import Home from './pages/Home';
+import About from './pages/About';
 
-import styles from './app.module.css';
+import AppNavbar from './components/AppNavbar';
+// import { Container } from 'reactstrap';
 
-import { Route, Link } from 'react-router-dom';
-
-const Home = () => (
-  <div>
-    This is the generated root route.{' '}
-    <Link to="/page-2">Click here for page 2.</Link>
-  </div>
-);
-const About = () => (
-  <div>
-    <Link to="/">Click here to go back to root page.</Link>
-  </div>
-);
-// function About (){ return () }
+// import store from './store';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css';
 
 export function App() {
   return (
-    <div className={styles.app}>
-      <header className="flex">
+    <>
+    {/* <div className={styles.app}> */}
+      {/* <header className="flex">
         <h1>portal!</h1>
-      </header>
+      </header> */}
 
-      <div role="navigation">
+      <AppNavbar />
+      {/* <div role="navigation">
         <ul>
           <li>
             <Link to="/">Home</Link>
@@ -33,11 +29,13 @@ export function App() {
             <Link to="/page-2">Page 2</Link>
           </li>
         </ul>
-      </div>
+      </div> */}
 
-      <Route path="/" exact render={Home} />
-      <Route path="/page-2" exact render={About} />
-    </div>
+      <div className="App">
+        <Route path="/" exact render={Home} />
+        <Route path="/page-2" exact render={About} />
+      </div>
+    </>
   );
 }
 

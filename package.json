@@ -28,6 +28,7 @@
   "private": true,
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "bootstrap": "^4.5.3",
     "config": "^3.3.3",
     "core-js": "^3.6.5",
     "cors": "^2.8.5",
@@ -40,7 +41,10 @@
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-router-dom": "5.2.0",
-    "tslib": "^2.0.0"
+    "react-uid": "^2.3.1",
+    "reactstrap": "^8.8.1",
+    "tslib": "^2.0.0",
+    "zustand": "^3.3.1"
   },
   "devDependencies": {
     "@babel/core": "7.9.6",
