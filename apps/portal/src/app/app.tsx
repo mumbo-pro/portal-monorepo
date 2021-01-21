@@ -9,17 +9,17 @@ import AppNavbar from './components/AppNavbar';
 
 // import store from './store';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
+import './app.module.css';
 
 export function App() {
   return (
     <>
-    {/* <div className={styles.app}> */}
+      {/* <div className={styles.app}> */}
       {/* <header className="flex">
         <h1>portal!</h1>
       </header> */}
 
-      <AppNavbar />
+      {/* <AppNavbar /> */}
       {/* <div role="navigation">
         <ul>
           <li>
@@ -29,12 +29,14 @@ export function App() {
             <Link to="/page-2">Page 2</Link>
           </li>
         </ul>
-      </div> */}
 
-      <div className="App">
+</div> */}
+      <Home />
+
+      {/* <div className="App">
         <Route path="/" exact render={Home} />
         <Route path="/page-2" exact render={About} />
-      </div>
+      </div> */}
     </>
   );
 }

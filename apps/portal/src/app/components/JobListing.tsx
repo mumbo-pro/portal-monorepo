@@ -53,7 +53,7 @@ function JobListing(props) {
                     className="remove-btn"
                     color="danger"
                     size="sm"
-                    onClick={onDeleteClick(_id)}
+                    // onClick={onDeleteClick(_id)}
                   >
                     &times;
                   </Button>
