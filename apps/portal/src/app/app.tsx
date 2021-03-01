@@ -1,14 +1,14 @@
 import React from 'react';
 // import styles from './app.module.css';
-import { Route } from 'react-router-dom';
+// import { Route } from 'react-router-dom';
 import Home from './pages/Home';
-import About from './pages/About';
+// import About from './pages/About';
 
-import AppNavbar from './components/AppNavbar';
+// import AppNavbar from './components/AppNavbar';
 // import { Container } from 'reactstrap';
 
 // import store from './store';
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 import './app.module.css';
 
 export function App() {
@@ -32,6 +32,7 @@ export function App() {
 
 </div> */}
       <Home />
+      {/* <h1>asdasdad</h1> */}
 
       {/* <div className="App">
         <Route path="/" exact render={Home} />
