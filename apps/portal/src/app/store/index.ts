@@ -1,29 +1,14 @@
 import create from 'zustand';
 import { uid } from 'react-uid';
+import { Job,  UserRegister, AppState } from './interface';
 
-// import {Job} from './interface'
-// import {User} from './interface'
-import { Job, UserRegister } from './interface';
-// import {UserLogin} from './interface'
-import { AppState } from './interface';
 /**
- * login
- * logout
- * fetch
- * addonejob
- * deleteonejob
- * deletealljobs
- * applyjob
+ * setUser
+ * user
  */
 export const useAppStore = create((set) => ({
-  //
   jobs: [],
-
-  //
   user: {},
-
-  //
-
   setJobs: (jobs: Job[]) =>
     set((state: AppState) => ({
       jobs: jobs,
