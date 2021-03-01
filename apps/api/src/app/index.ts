@@ -6,8 +6,8 @@ import logger from  'morgan';
 // add rate limit and helmet
 
 import jobRoutes from './routes/job'
-import usersRoutes from './routes/users'
-import authRoutes from './routes/auth'
+// import usersRoutes from './routes/users'
+// import authRoutes from './routes/auth'
 
 
 const app = express();
@@ -32,7 +32,7 @@ app.get('/api', (req, res) => {
   res.send({ message: 'Welcome to job portal api!' });
 });
 app.use('/api/jobs', jobRoutes);
-app.use('/api/users', usersRoutes);
-app.use('/api/auth', authRoutes);
+// app.use('/api/users', usersRoutes);
+// app.use('/api/auth', authRoutes);
 
 export default app;
