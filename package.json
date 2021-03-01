@@ -28,7 +28,7 @@
   "private": true,
   "dependencies": {
     "bcryptjs": "^2.4.3",
-    "bootstrap": "^4.5.3",
+    "bootstrap": "5.0.0-beta2",
     "config": "^3.3.3",
     "core-js": "^3.8.2",
     "cors": "^2.8.5",
