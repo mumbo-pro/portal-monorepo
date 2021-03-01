@@ -10,42 +10,24 @@ import {
   ModalHeader,
 } from 'reactstrap';
 
-// import { connect } from 'react-redux';
-// import { addJob } from '../actions/jobActions';
-// import PropTypes from 'prop-types';
 import { AppState } from '../store/interface';
 import { useAppStore } from '../store/index';
 
 
-
-function AddJobModal() {
-  // state = {
-  //   modal: false,
-  //   name: ''
-  // };
-
-  const { user, addJob } = useAppStore((state: AppState) => state);
+const AddJobModal = ()  =>{
+  
+  const { user } = useAppStore((state: AppState) => state);
 
   const [name, setName] = useState('');
   const [isModalOpen, setIsModalOpen] = useState(false);
-  // const [isAuthenticated, setIsAuthenticated] = useState(false);
-
-  // static propTypes = {
-  //   isAuthenticated: PropTypes.bool
-  // };
-
 
 
   const toggle = () => {
-    setIsModalOpen(!isModalOpen);
-    // this.setState({
-    //   modal: !this.state.modal
-    // });
+    setIsModalOpen(isModalOpen => !isModalOpen);
   };
 
   const onSubmit = (e) => {
     e.preventDefault();
-    addJob(name);
     setName('');
     // Close modal
     toggle();
@@ -76,7 +58,7 @@ function AddJobModal() {
                   setName(e.target.value);
                 }}
               />
-              <Button color="dark" style={{ marginTop: '2rem' }} block>
+              <Button type="submit" color="dark" style={{ marginTop: '2rem' }} block>
                 Add Job
               </Button>
             </FormGroup>
@@ -87,14 +69,6 @@ function AddJobModal() {
   );
 }
 
-// const mapStateToProps = state => ({
-//   item: state.item,
-//   isAuthenticated: state.auth.isAuthenticated
-// });
 
-// export default connect(
-//   mapStateToProps,
-//   { addItem: addJob }
-// )(AddJobModal);
 
 export default AddJobModal;

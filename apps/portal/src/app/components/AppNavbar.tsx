@@ -8,28 +8,23 @@ import {
   NavbarToggler,
   NavItem,
 } from 'reactstrap';
-// import { connect } from 'react-redux';
-// import PropTypes from 'prop-types';
 import RegisterModal from './auth/RegisterModal';
 import LoginModal from './auth/LoginModal';
 import Logout from './auth/Logout';
 
-function AppNavbar() {
-  // state = {
-  //   isOpen: false
-  // };
-  const [isOpen, setIsOpen] = useState(false);
+import { useAppStore } from '../store/index';
+import { AppState } from '../store/interface';
 
-  // static propTypes = {
-  //   auth: PropTypes.object.isRequired
-  // };
+
+const  AppNavbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => {
     setIsOpen(!isOpen);
   };
 
-  const { isAuthenticated, user } = this.props.auth;
-  // render() {
+  const { user  } = useAppStore((state: AppState) => state);
+
 
   const authLinks = (
     <>
@@ -63,7 +58,7 @@ function AppNavbar() {
           <NavbarToggler onClick={toggle} />
           <Collapse isOpen={isOpen} navbar>
             <Nav className="ml-auto" navbar>
-              {isAuthenticated ? authLinks : guestLinks}
+              {user ? authLinks : guestLinks}
             </Nav>
           </Collapse>
         </Container>
@@ -71,14 +66,5 @@ function AppNavbar() {
     </div>
   );
 }
-
-// const mapStateToProps = state => ({
-//   auth: state.auth
-// });
-
-// export default connect(
-//   mapStateToProps,
-//   null
-// )(AppNavbar);
 
 export default AppNavbar;
