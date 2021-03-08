@@ -1,86 +1,75 @@
-import React, { useState, useEffect, FormEvent } from 'react';
-import {
-  Alert,
-  Button,
-  Form,
-  FormGroup,
-  Input,
-  Label,
-  Modal,
-  ModalBody,
-  ModalHeader,
-  NavLink,
-} from 'reactstrap';
+import React, { useState, useEffect, FormEvent } from 'react'
+import { Button, Modal, Form } from 'react-bootstrap-v5'
 
-import { AppState } from '../../store/interface';
-import { useAppStore } from '../../store/index';
+import { AppState } from '../../store/interface'
+import { useAppStore } from '../../store/index'
 
 function LoginModal() {
-  const [modal, setModal] = useState(false);
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [modal, setModal] = useState(false)
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
 
-
-  const { setUser } = useAppStore((state: AppState) => state);
+  const { setUser } = useAppStore((state: AppState) => state)
 
   const toggle = () => {
-    setModal((modal) => !modal);
-  };
+    setModal((modal) => !modal)
+  }
 
   const login = (user) => {
-    console.log('login APi call here');
-  };
-  const onSubmit = (e:FormEvent) => {
-    e.preventDefault();
-    const user = { email, password };
-    // Attempt to login
-    login(user);
-    setUser(user);
-  };
+    console.log('login APi call here')
+  }
+  const onSubmit = (e: FormEvent) => {
+    e.preventDefault()
+    const user = { email, password }
+    login(user)
+    setUser(user)
+  }
 
   return (
-    <div>
-      <NavLink onClick={toggle} href="#">
+    <>
+      <Button variant="secondary" onClick={toggle}>
         Login
-      </NavLink>
+      </Button>
 
-      <Modal isOpen={modal} toggle={toggle}>
-        <ModalHeader toggle={toggle}>Login</ModalHeader>
-        <ModalBody>
-          <Form onSubmit={onSubmit}>
-            <FormGroup>
-              <Label for="email">Email</Label>
-              <Input
+      <Modal show={modal} onHide={toggle}>
+        <Modal.Header closeButton>
+          <Modal.Title>Login</Modal.Title>
+        </Modal.Header>
+        <Form>
+          <Modal.Body>
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Label>Email address</Form.Label>
+              <Form.Control
                 type="email"
-                name="email"
-                id="email"
-                placeholder="Email"
+                placeholder="Enter email"
                 className="mb-3"
                 onChange={(e) => {
-                  setEmail(e.target.value);
+                  setEmail(e.target.value)
                 }}
               />
+            </Form.Group>
 
-              <Label for="password">Password</Label>
-              <Input
+            <Form.Group className="mb-3" controlId="formBasicPassword">
+              <Form.Label>Password</Form.Label>
+              <Form.Control
                 type="password"
-                name="password"
-                id="password"
                 placeholder="Password"
                 className="mb-3"
                 onChange={(e) => {
-                  setPassword(e.target.value);
+                  setPassword(e.target.value)
                 }}
               />
-              <Button type="submit" color="dark" style={{ marginTop: '2rem' }} block>
-                Login
-              </Button>
-            </FormGroup>
-          </Form>
-        </ModalBody>
+            </Form.Group>
+          </Modal.Body>
+          <Modal.Footer>
+            <Button type="submit" variant="dark" className="mt2" onClick={toggle}>
+              Login
+            </Button>
+          </Modal.Footer>
+        </Form>
       </Modal>
-    </div>
-  );
+    </>
+  )
 }
 
-export default LoginModal;
+export default LoginModal
