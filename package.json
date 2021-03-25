@@ -1,59 +1,104 @@
 {
-  "name": "portal",
-  "version": "0.0.1",
-  "main": "./bin/server",
-  "private": true,
-  "description": "A case study project to connect with recruiters, HR managers & people in the same industry to find the best job opportunities,",
-  "scripts": {
-    "prestart": "node setup.js",
-    "start": "concurrently \"npm run server\" \"npm run client\"",
-    "server": "node ./bin/server",
-    "client": "node ./bin/client",
-    "serve": "nodemon ./bin/server",
-    "debug": "set DEBUG=myapp:* & npm start",
-    "test": "jest"
-  },
-  "author": "Mumbo IO <https://mumbo-pro.github.io/mumbo.io/>",
+  "name": "mumbocodes",
+  "version": "0.0.0",
   "license": "MIT",
+  "scripts": {
+    "nx": "nx",
+    "start": "nx serve",
+    "build": "nx build",
+    "test": "nx test",
+    "lint": "nx workspace-lint && nx lint",
+    "e2e": "nx e2e",
+    "affected:apps": "nx affected:apps",
+    "affected:libs": "nx affected:libs",
+    "affected:build": "nx affected:build",
+    "affected:e2e": "nx affected:e2e",
+    "affected:test": "nx affected:test",
+    "affected:lint": "nx affected:lint",
+    "affected:dep-graph": "nx affected:dep-graph",
+    "affected": "nx affected",
+    "format": "nx format:write",
+    "format:write": "nx format:write",
+    "format:check": "nx format:check",
+    "update": "nx migrate latest",
+    "workspace-generator": "nx workspace-generator",
+    "dep-graph": "nx dep-graph",
+    "help": "nx help",
+    "prepare": "husky install"
+  },
+  "private": true,
   "dependencies": {
     "bcryptjs": "^2.4.3",
-    "concurrently": "^4.1.2",
-    "config": "^3.2.2",
+    "bootstrap": "5.0.0-beta2",
+    "config": "^3.3.4",
+    "core-js": "^3.9.1",
     "cors": "^2.8.5",
-    "debug": "~2.6.9",
+    "debug": "^4.3.1",
+    "document-register-element": "1.13.1",
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.7.5",
-    "morgan": "~1.9.1"
+    "mongoose": "^5.11.18",
+    "morgan": "^1.10.0",
+    "react": "17.0.1",
+    "react-bootstrap-v5": "^1.4.0",
+    "react-dom": "17.0.1",
+    "react-query": "^3.12.0",
+    "react-router-dom": "5.2.0",
+    "react-uid": "^2.3.1",
+    "tslib": "^2.1.0",
+    "zustand": "^3.3.3"
   },
   "devDependencies": {
-    "jest": "^24.9.0",
-    "nodemon": "^1.19.2",
-    "shelljs": "^0.8.4",
-    "superagent": "5.1.0",
-    "supertest": "4.0.2"
+    "@babel/core": "7.13.8",
+    "@babel/preset-env": "7.13.8",
+    "@babel/preset-react": "7.12.13",
+    "@babel/preset-typescript": "7.13.0",
+    "@nrwl/cli": "11.4.0",
+    "@nrwl/cypress": "11.4.0",
+    "@nrwl/eslint-plugin-nx": "11.4.0",
+    "@nrwl/express": "^11.4.0",
+    "@nrwl/jest": "11.4.0",
+    "@nrwl/node": "11.4.0",
+    "@nrwl/react": "11.4.0",
+    "@nrwl/tao": "11.4.0",
+    "@nrwl/web": "11.4.0",
+    "@nrwl/workspace": "11.4.0",
+    "@testing-library/react": "11.2.5",
+    "@types/express": "4.17.11",
+    "@types/jest": "26.0.20",
+    "@types/node": "14.14.31",
+    "@types/react": "17.0.2",
+    "@types/react-dom": "17.0.1",
+    "@types/react-router-dom": "5.1.7",
+    "@typescript-eslint/eslint-plugin": "4.15.2",
+    "@typescript-eslint/parser": "4.15.2",
+    "babel-jest": "26.6.3",
+    "cypress": "^6.5.0",
+    "dotenv": "8.2.0",
+    "eslint": "7.21.0",
+    "eslint-config-prettier": "8.1.0",
+    "eslint-plugin-cypress": "^2.11.2",
+    "eslint-plugin-import": "2.22.1",
+    "eslint-plugin-jsx-a11y": "6.4.1",
+    "eslint-plugin-react": "7.22.0",
+    "eslint-plugin-react-hooks": "4.2.0",
+    "husky": "^5.1.2",
+    "jest": "26.6.3",
+    "lint-staged": "^10.5.4",
+    "prettier": "2.2.1",
+    "ts-jest": "26.5.2",
+    "ts-node": "~9.1.1",
+    "tslint": "~6.1.0",
+    "typescript": "~4.2.2"
   },
-  "directories": {
-    "doc": "docs",
-    "test": "tests"
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/gsonly/portal-monorepo.git"
-  },
-  "keywords": [
-    "portal",
-    "job",
-    "jobsearch"
-  ],
-  "bugs": {
-    "url": "https://github.com/gsonly/portal-monorepo/issues"
-  },
-  "homepage": "https://github.com/gsonly/portal-monorepo#readme",
-  "jest": {
-    "testEnvironment": "node",
-    "coveragePathIgnorePatterns": [
-      "/node_modules/"
+  "lint-staged": {
+    "*.{js,json,css,scss,md,ts,html,graphql}": [
+      "yarn format --uncommitted"
     ]
   }
 }
