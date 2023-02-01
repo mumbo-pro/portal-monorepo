@@ -37,7 +37,7 @@
     "document-register-element": "1.13.1",
     "express": "^4.17.3",
     "jsonwebtoken": "^9.0.0",
-    "mongoose": "^5.11.18",
+    "mongoose": "^5.13.15",
     "morgan": "^1.10.0",
     "react": "17.0.1",
     "react-bootstrap-v5": "^1.4.0",
